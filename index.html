@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111">
+<title>SHORASH | Restaurant & Cafe</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+:root{--bg:#f5f1ea;--paper:#fff;--ink:#141414;--muted:#777;--gold:#b48a52;--gold2:#d4b27b;--line:#e8dfd2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Arial,sans-serif}
+button,input{font:inherit}.hero{min-height:270px;background:#101010;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;color:#fff}
+.hero:before{content:"";position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,#5c452c,transparent 65%);top:-280px;left:50%;transform:translateX(-50%);opacity:.8}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000 30%,#0009)}
+.hero-content{position:relative;z-index:2;padding:35px 18px}.brand{font-size:43px;font-weight:800;letter-spacing:6px}.restaurant{font-family:"Playfair Display",serif;font-size:14px;letter-spacing:4px;color:#d7c1a0;margin-top:-4px}.line{height:1px;width:75px;background:var(--gold);margin:16px auto}.welcome{font-size:13px;color:#ddd}.pill{display:inline-block;margin-top:15px;padding:6px 14px;border:1px solid #8e6c43;border-radius:999px;color:#e2c28f;font-size:11px}
+.sticky{position:sticky;top:0;z-index:30;background:#f5f1eaf2;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.toolbar{max-width:980px;margin:auto;padding:11px 14px 7px;display:flex;gap:8px}.search{flex:1;display:flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 12px}.search input{border:0;outline:0;width:100%;background:transparent;padding:11px 8px;font-size:13px}.iconbtn{width:44px;border:1px solid var(--line);border-radius:14px;background:#fff;cursor:pointer}
+.cats{max-width:980px;margin:auto;display:flex;gap:8px;overflow:auto;padding:0 14px 11px;scrollbar-width:none}.cats::-webkit-scrollbar{display:none}.cat{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;white-space:nowrap;font-size:12px;color:#555}.cat.active{background:#151515;color:#fff;border-color:#151515}
+.wrap{max-width:980px;margin:auto;padding:22px 14px 100px}.intro{margin:0 2px 20px}.eyebrow{font-size:10px;color:var(--gold);font-weight:800;letter-spacing:2px}.intro h1{font-size:25px;margin:3px 0}.intro p{font-size:12px;color:var(--muted);margin:0}
+.featured{display:flex;gap:12px;overflow:auto;margin:0 -14px 28px;padding:2px 14px 7px;scrollbar-width:none}.featured::-webkit-scrollbar{display:none}.feature-card{min-width:245px;max-width:285px;background:#171717;color:#fff;border-radius:19px;overflow:hidden;box-shadow:0 10px 28px #0002}.feature-card img{width:100%;height:165px;object-fit:cover;display:block}.feature-info{padding:10px 12px 13px}.feature-info small{color:#d9bb8a}.feature-info strong{display:block;font-size:14px;margin-top:2px}
+.section{scroll-margin-top:120px;margin-bottom:32px}.section-head{display:flex;justify-content:space-between;align-items:end;margin:0 3px 12px}.section-head h2{margin:0;font-size:20px}.count{font-size:11px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{background:#fff;border:1px solid #eee5da;border-radius:18px;overflow:hidden;box-shadow:0 7px 24px #0000000a;cursor:pointer}.photo{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:#ddd}.info{padding:10px 11px 12px}.name{font-size:13px;font-weight:700;line-height:1.6;min-height:41px}.meta{display:flex;align-items:center;justify-content:space-between;margin-top:7px}.price{font-size:12px;color:#9b6c2d;font-weight:800}.add{border:0;background:#171717;color:#fff;width:29px;height:29px;border-radius:50%;font-size:19px;line-height:1}
+.empty{text-align:center;padding:50px;color:#777;display:none}.footer{background:#111;color:#aaa;text-align:center;padding:30px 15px;font-size:11px}.footer strong{color:#fff;letter-spacing:2px}
+.modal{position:fixed;inset:0;background:#000b;z-index:100;display:none;align-items:flex-end}.modal.open{display:flex}.sheet{width:min(640px,100%);margin:auto;background:#fff;border-radius:25px 25px 0 0;overflow:auto;max-height:92vh;position:relative}.sheet img{width:100%;max-height:52vh;object-fit:cover}.close{position:absolute;z-index:2;top:12px;left:12px;width:40px;height:40px;border:0;border-radius:50%;background:#fff;font-size:24px;box-shadow:0 4px 15px #0004}.sheet-body{padding:18px 18px 25px}.sheet h3{font-size:22px;margin:0 0 5px}.sheet-price{color:#9b6c2d;font-weight:800;margin:9px 0}.sheet p{color:#777;font-size:13px;line-height:1.9}.wa{display:block;text-align:center;text-decoration:none;background:#171717;color:#fff;padding:13px;border-radius:13px;font-size:13px;font-weight:700;margin-top:15px}
+.lang{position:fixed;right:14px;bottom:15px;z-index:40;background:#171717;color:#fff;border:1px solid #444;border-radius:999px;padding:9px 13px;font-size:11px}
+body.en .ar{display:none}body:not(.en) .en{display:none}
+@media(min-width:680px){.grid{grid-template-columns:repeat(3,1fr)}.hero{min-height:330px}.brand{font-size:55px}.featured{margin-left:0;margin-right:0}.toolbar,.cats{padding-left:0;padding-right:0}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="hero-content"><div class="brand">SHORASH</div><div class="restaurant">RESTAURANT & CAFE</div><div class="line"></div><div class="welcome ar">أهلاً وسهلاً بكم</div><div class="welcome en">Welcome to SHORASH</div><div class="pill">DIGITAL MENU</div></div></header>
+
+<div class="sticky">
+  <div class="toolbar">
+    <div class="search">⌕<input id="search" class="ar" placeholder="ابحث عن أكلة..." autocomplete="off"><input id="searchEn" class="en" placeholder="Search menu..." autocomplete="off"></div>
+    <button class="iconbtn" id="lang">EN</button>
+  </div>
+  <nav id="cats" class="cats"></nav>
+</div>
+
+<main id="menu" class="wrap">
+  <div class="intro"><div class="eyebrow">SHORASH MENU</div><h1 class="ar">اختار اللي تشتهيه 🍽️</h1><h1 class="en">Choose your favorite</h1><p class="ar">استكشف أقسام منيو شورش واختار وجبتك.</p><p class="en">Explore our menu and choose your favorite.</p></div>
+  <div id="featured" class="featured"></div>
+  <div id="sections"></div>
+  <div id="empty" class="empty ar">ما لقينا أكلة بهذا الاسم.</div><div id="emptyEn" class="empty en">No items found.</div>
+</main>
+
+<footer class="footer"><strong>SHORASH</strong><br><span>07502662002</span></footer>
+
+<div id="modal" class="modal"><div class="sheet"><button id="close" class="close">×</button><img id="mimg"><div class="sheet-body"><h3 id="mname"></h3><div id="mprice" class="sheet-price"></div><p id="mdesc"></p><a id="wa" class="wa" target="_blank" rel="noopener">طلب عبر WhatsApp</a></div></div></div>
+
+<script src="data.js"></script>
+<script>
+const D=window.MENU_DATA, sections=document.getElementById('sections'),cats=document.getElementById('cats'),featured=document.getElementById('featured');
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+function catsUI(){cats.innerHTML='<button class="cat active" data-cat="all">الكل</button>'+D.categories.map(c=>`<button class="cat" data-cat="${esc(c)}">${esc(c)}</button>`).join('');cats.querySelectorAll('.cat').forEach(b=>b.onclick=()=>{cats.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.cat,query())})}
+function query(){return document.body.classList.contains('en')?document.getElementById('searchEn').value:document.getElementById('search').value}
+function featuredUI(){const items=D.products.filter(p=>p.featured).slice(0,6);featured.innerHTML=items.length?items.map(p=>`<article class="feature-card" data-id="${p.id}"><img src="${p.image}" loading="lazy"><div class="feature-info"><small>SHORASH</small><strong>${esc(p.name)}</strong></div></article>`).join(''):'';featured.querySelectorAll('.feature-card').forEach(x=>x.onclick=()=>openModal(D.products.find(p=>p.id==x.dataset.id)))}
+function render(filter='all',q=''){sections.innerHTML='';let found=0;D.categories.forEach(cat=>{if(filter!=='all'&&filter!==cat)return;let items=D.products.filter(p=>p.category===cat&&(!q||p.name.toLowerCase().includes(q.toLowerCase())));if(!items.length)return;found+=items.length;let sec=document.createElement('section');sec.className='section';sec.innerHTML=`<div class="section-head"><h2>${esc(cat)}</h2><span class="count">${items.length} صنف</span></div><div class="grid">${items.map(p=>`<article class="card" data-id="${p.id}"><img class="photo" src="${p.image}" loading="lazy" alt="${esc(p.name)}"><div class="info"><div class="name">${esc(p.name)}</div><div class="meta"><span class="price">${p.price?esc(p.price)+' د.ع':'السعر يُضاف لاحقًا'}</span><button class="add">+</button></div></div></article>`).join('')}</div>`;sections.appendChild(sec)});document.getElementById('empty').style.display=found?'none':'block';document.getElementById('emptyEn').style.display=found?'none':'block';sections.querySelectorAll('.card').forEach(c=>c.onclick=()=>openModal(D.products.find(p=>p.id==c.dataset.id)))}
+function openModal(p){mimg.src=p.image;mimg.alt=p.name;mname.textContent=p.name;mprice.textContent=p.price?p.price+' د.ع':'السعر يُضاف لاحقًا';mdesc.textContent=p.description||'';wa.href='https://wa.me/'+D.phone+'?text='+encodeURIComponent('مرحبًا SHORASH، أريد الاستفسار عن: '+p.name);modal.classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
+document.getElementById('close').onclick=closeModal;document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')closeModal()};
+document.getElementById('lang').onclick=()=>{document.body.classList.toggle('en');document.documentElement.lang=document.body.classList.contains('en')?'en':'ar';document.documentElement.dir=document.body.classList.contains('en')?'ltr':'rtl';document.getElementById('lang').textContent=document.body.classList.contains('en')?'AR':'EN';render(cats.querySelector('.active')?.dataset.cat||'all',query())};
+document.getElementById('search').oninput=()=>render('all',query());document.getElementById('searchEn').oninput=()=>render('all',query());
+catsUI();featuredUI();render();
+</script>
+</body>
+</html>
